@@ -1,0 +1,79 @@
+//Hero block shadow
+#block-77e6adbdc0ac2bb1cdb9, #block-f7fb13bcd0c66a8297dd{
+  filter: drop-shadow(-2px 3px 2px #000);
+}
+//End search & hero block shadow
+
+
+
+//Nav menu customization
+a.user-accounts-text-link.header-nav-item, .header-nav-item a{
+  background-image: none!important;
+}
+a.user-accounts-text-link.header-nav-item::after,nav.header-nav-list a::after {
+  content: '';
+  background: #ED1B24;
+  height: 2px;
+  width: 0;
+  display: block;
+  margin-top: 5px !important;
+  transition: width .8s;
+  margin: 0 auto;
+}
+a.user-accounts-text-link.header-nav-item:hover::after, nav.header-nav-list a:hover::after {
+  width: 100%;
+  margin: 0 auto;
+}
+nav.header-nav-list a:hover,
+.header-nav-item:hover{
+  color: #ED1B24!important;
+}
+.header-nav-folder-item{
+  width: fit-content;
+}
+//End nav menu customization
+
+
+
+//language switcher
+.language {
+  color: #FFF;
+  position: absolute;
+  font: bold 16px roboto;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+  a {
+    color: #FFF;
+    &:hover {
+      color: #ED1B24;
+      opacity: 0.8;
+    }
+  }
+  @media (max-width: 767px){
+    top: 10px;
+    font: bold 11px roboto;
+  }
+}
+
+.header-layout-nav-right .header-nav{
+  padding-right: 7vw;
+}
+//End language switcher
+
+
+
+//assessment form customization
+#ass_form {
+  height: 180vh;
+  @media(max-width:840px) {
+    height: 230vh!important;
+  }
+}
+
+
+
+//About us button
+#block-yui_3_17_2_1_1669646814053_304577:hover, #block-yui_3_17_2_1_1669646814053_477010:hover, #block-5e80ba9b711f7d68ee55:hover , #block-2e3d5b9ca4003b2dec7a:hover {
+  background: #ED1B24!important;
+}
