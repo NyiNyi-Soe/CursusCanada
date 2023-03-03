@@ -1,0 +1,14 @@
+Red
+#ED1B24
+
+Logo Red
+#D30303
+
+Gray1
+#E8E8E8
+
+Gray2
+#AAAAAA
+
+Black2
+#3D3D3D
