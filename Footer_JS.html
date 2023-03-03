@@ -1,0 +1,123 @@
+<html>
+<script>
+$(function() { 
+  var defaultLanguage = 'en';
+  var lang = location.pathname.split("/")[1];
+  var defaultClass = 'lang-'+defaultLanguage+'';
+  var itemParent = "nav [class*='collection'],nav [class*='folder'],nav [class*='index'],nav [class*='group']";
+  if (lang == "" || lang.length > 2 ){
+    var lang = defaultLanguage;
+  }
+
+  $('a[href="/"]').addClass('lang-'+defaultLanguage+'').parents(itemParent).addClass('lang-'+defaultLanguage+'');
+  $('nav a:link:not([href^="http://"]):not([href^="https://"])').each(function () {
+    var langType = $(this).attr('href').split("/")[1];
+    var multiLanguageClass = 'multilanguage lang-' + langType + '';
+    if (undefined !== langType && langType.length <= 2) 
+      $(this).addClass(multiLanguageClass).parents(itemParent).addClass(multiLanguageClass);
+  });
+  $('nav button').each(function () {
+    var langTypeFolder = $(this).attr('data-controller-folder-toggle').split("/")[0];
+    var multiLanguageClass = 'multilanguage lang-' + langTypeFolder + '';
+    if (undefined !== langTypeFolder && langTypeFolder.length <= 2) 
+      $(this).addClass(multiLanguageClass);
+  });
+
+  if (lang == "fr") {
+    $('a[href="/"]').attr("href", "/fr/home/");
+  }
+
+
+
+  const frLang = document.querySelector('.lang-fr');
+  const enLang = document.querySelector('.lang-en');
+  if (lang == "fr") {
+    $('footer.sections section:first-child').remove();
+    frLang.style.opacity = '0.3';
+
+  } else if(lang == "en"){
+    $('footer.sections section:last-child').remove();
+    enLang.style.opacity = '0.3';
+  }
+
+
+  $('.exclude-me,.exclude-me a').addClass('exclude');
+  $('.sqs-svg-icon--list a,.SocialLinks-link').addClass('exclude');
+
+  $('.multilanguage:not(".lang-'+lang+',.exclude")').remove();
+});
+</script>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.2.0/css/flag-icons.css">
+<script>
+$('body').prepend('<div class="language"><a href="/en/home" class="lang-en">EN&nbsp;<span class="fi fi-gb"></span></a> | <a href="/fr/home/" class="lang-fr"><span class="fi fi-fr"></span>&nbsp;FR</a></div>');
+</script>
+
+
+
+<script>
+  $(function() {
+  switch (window.location.pathname) {
+  case '/en/home':
+    $(".language a.lang-en").attr("href", "/en/home");
+    $(".language a.lang-fr").attr("href", "/fr/home");
+    break;
+  case '/fr/home':
+    $(".language a.lang-en").attr("href", "/en/home");
+    $(".language a.lang-fr").attr("href", "/fr/home");
+    break;
+  case '/en/immigrate':
+    $(".language a.lang-en").attr("href", "/en/immigrate");
+    $(".language a.lang-fr").attr("href", "/fr/immigrate");
+    break;
+  case '/fr/immigrate':
+    $(".language a.lang-en").attr("href", "/en/immigrate");
+    $(".language a.lang-fr").attr("href", "/fr/immigrate");
+    break;
+    case '/en/study':
+      $(".language a.lang-en").attr("href", "/en/study");
+      $(".language a.lang-fr").attr("href", "/fr/study");
+      break;
+    case '/fr/study':
+      $(".language a.lang-en").attr("href", "/en/study");
+      $(".language a.lang-fr").attr("href", "/fr/study");
+      break;
+  case '/en/work':
+    $(".language a.lang-en").attr("href", "/en/work");
+    $(".language a.lang-fr").attr("href", "/fr/work");
+    break;
+  case '/fr/work':
+    $(".language a.lang-en").attr("href", "/en/work");
+    $(".language a.lang-fr").attr("href", "/fr/work");
+    break;
+    case '/en/sponsorship':
+      $(".language a.lang-en").attr("href", "/en/sponsorship");
+      $(".language a.lang-fr").attr("href", "/fr/sponsorship");
+      break;
+    case '/fr/sponsorship':
+      $(".language a.lang-en").attr("href", "/en/sponsorship");
+      $(".language a.lang-fr").attr("href", "/fr/sponsorship");
+      break;
+      case '/en/business':
+        $(".language a.lang-en").attr("href", "/en/business");
+        $(".language a.lang-fr").attr("href", "/fr/business");
+        break;
+      case '/fr/business':
+        $(".language a.lang-en").attr("href", "/en/business");
+        $(".language a.lang-fr").attr("href", "/fr/business");
+        break;
+      case '/en/visitor':
+        $(".language a.lang-en").attr("href", "/en/visitor");
+        $(".language a.lang-fr").attr("href", "/fr/visitor");
+        break;
+      case '/fr/visitor':
+        $(".language a.lang-en").attr("href", "/en/visitor");
+        $(".language a.lang-fr").attr("href", "/fr/visitor");
+  }
+  });
+</script>
+
+</html>
